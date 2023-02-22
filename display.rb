@@ -1,4 +1,11 @@
 module Display
+    # welcoming message that explains the rules
+    def welcoming_message
+        puts "Welcome to Mastermind Game"
+        puts "Try to guess the secret code consisting of four colors created by AI"
+        puts 'Every time you guess, feedback will be given on whether the code was correct'
+    end
+
     # method that takes in user input for code guessed
     def guess_the_code
         puts "Please make an attemp to guess the code from the following colors:"
@@ -8,20 +15,17 @@ module Display
         return user_input
     end
 
+    # method that converts user input to the possible code array
     def convert_to_the_array(user_input)
         return user_input.gsub(" ","").downcase.split(",")
     end
-end
 
-class Test
-    include Display
-
-    def initialize
-        @input = guess_the_code()
+    def winning_message
+        puts "YOU WON! YOU CORRECTLY GUESSED THE CODE"
     end
 
-    attr_accessor :input
+    def losing_message (actual_code)
+        puts "YOU LOST! THE CODE WAS #{actual_code.join(", ")}"
+    end
 end
 
-new_test = Test.new
-p new_test.convert_to_the_array(new_test.input)

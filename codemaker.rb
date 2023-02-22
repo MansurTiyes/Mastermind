@@ -30,8 +30,4 @@ class Codemaker
     attr_reader :code
 end
 
-new_codemaker = Codemaker.new
-guess = ["blue", "green", "black", "blue"]
-p new_codemaker.code
-p new_codemaker.feedback_giver(guess)
 
