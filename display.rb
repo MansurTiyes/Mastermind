@@ -2,6 +2,12 @@ module Display
     # welcoming message that explains the rules
     def welcoming_message
         puts "Welcome to Mastermind Game"
+        puts "Press 1 to play as a codebreaker"
+        puts "Press 2 to play as a codemaker"
+    end
+
+    # rules for playing as a codebraker
+    def codebreaker_rules
         puts "Try to guess the secret code consisting of four colors created by AI"
         puts 'Every time you guess, feedback will be given on whether the code was correct'
     end
